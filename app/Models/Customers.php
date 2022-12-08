@@ -13,4 +13,8 @@ class Customers extends Model
     {
         return $this->hasMany(Messages::class);
     }
+    public function chats()
+    {
+        return $this->hasMany(Chats::class);
+    }
 }

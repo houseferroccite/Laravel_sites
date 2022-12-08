@@ -14,7 +14,6 @@ class Messages extends Model
     {
         return $this->belongsTo(Customers::class,'custom_id');
     }
-
     protected $casts = [
         'content' => 'array',
     ];

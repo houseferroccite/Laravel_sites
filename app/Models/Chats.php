@@ -9,8 +9,12 @@ class Chats extends Model
 {
     use HasFactory;
 
-    public function messagesToChats()
+    public function message()
     {
-        return $this->hasMany(messages_to_chats::class);
+        return $this->hasMany(Messages_to_chats::class);
+    }
+    public function customer()
+    {
+        return $this->belongsTo(Customers::class,'custom_id');
     }
 }

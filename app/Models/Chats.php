@@ -9,12 +9,17 @@ class Chats extends Model
 {
     use HasFactory;
 
-    public function message()
-    {
-        return $this->hasMany(Messages_to_chats::class);
-    }
+    public $timestamps = false;
+    protected $fillable = ['manager_id','customer_id','b24_id','b24_type'];
+
     public function customer()
     {
         return $this->belongsTo(Customers::class,'custom_id');
     }
+
+    public function manager()
+    {
+        return $this->belongsTo(Managers::class,'manager_id');
+    }
+
 }
